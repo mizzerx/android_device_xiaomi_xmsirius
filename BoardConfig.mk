@@ -23,18 +23,21 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+#Device path
+DEVICE_PATH := device/xiaomi/xmsirius
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := kryo
+TARGET_CPU_VARIANT := cortex-a75
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_2ND_CPU_VARIANT := cortex-a75
 TARGET_USES_64_BIT_BINDER := true
 
 ENABLE_CPUSETS := true
@@ -52,8 +55,8 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_RAMDISK_OFFSET     := 0x01000000
-TARGET_PREBUILT_KERNEL := device/xiaomi/xmsirius/Image.gz-dtb
+BOARD_RAMDISK_OFFSET := 0x01000000
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/Image.gz-dtb
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm710
